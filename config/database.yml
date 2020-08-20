@@ -1,0 +1,29 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: password
+  host: mysql
+
+development:
+  <<: *default
+  database: hirostagram_development
+
+test:
+  <<: *default
+  database: hirostagram_test
+
+production:
+  <<: *default
+  database: hirostagram_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+
+# production:
+#   <<: *default
+#   username: app
+#   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+#   database: 
+#   host: <%= ENV['MYSQL_HOST'] %>
+#   socket: <%= ENV['MYSQL_SOCKET'] %>
