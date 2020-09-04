@@ -2,7 +2,7 @@ FROM ruby:2.6.5
 ENV LANG C.UTF-8
 
 # install required libraries
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN apt-get update -qq && apt-get install -y build-essential imagemagick libpq-dev nodejs
 
 RUN gem install bundler -v 2.0.2
 
